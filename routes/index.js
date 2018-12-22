@@ -4,7 +4,7 @@ var router = express.Router();
 const zoneFile = require('zone-file');
 const fetch = require('node-fetch');
 
-app.use(function(req, res, next) {
+router.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding");
   res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
