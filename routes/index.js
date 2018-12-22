@@ -4,6 +4,13 @@ var router = express.Router();
 const zoneFile = require('zone-file');
 const fetch = require('node-fetch');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding");
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+  next();
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -69,6 +76,7 @@ verifyRequest = (body) => {
     return false;
   });
 }
+
 router.post('/_matrix-internal/identity/v1/check_credentials', function(req, res, next) {  
   try {
   const body = req.body
