@@ -13,7 +13,7 @@
     "express": "~4.17.1",
     "http-errors": "~1.7.3",
     "morgan": "~1.9.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "zone-file": "^1.0.0"
   }
 }
